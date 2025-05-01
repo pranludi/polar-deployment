@@ -18,7 +18,7 @@ configMapGenerator:
 images:
 - name: catalog-service
   newName: ghcr.io/pranludi/catalog-service
-  newTag: bae50daaeeb0e00ded0b6bb73487e81f94da941a
+  newTag: 599782ee5b8ae68587f0c609cbd515b2dec4a9f4
 
 replicas:
 - count: 2
