@@ -2,24 +2,24 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - github.com/pranludi/catalog-service/k8s?ref=main
+- github.com/pranludi/catalog-service/k8s?ref=main
 
 patches:
-  - path: patch-env.yml
-  - path: patch-resources.yml
-  - path: patch-volumes.yml
+- path: patch-env.yml
+- path: patch-resources.yml
+- path: patch-volumes.yml
 
 configMapGenerator:
-  - behavior: merge
-    files:
-      - application-prod.yml
-    name: catalog-config
+- behavior: merge
+  files:
+  - application-prod.yml
+  name: catalog-config
 
 images:
-  - name: catalog-service
-    newName: ghcr.io/polarbookshop/catalog-service
-    newTag: latest
+- name: catalog-service
+  newName: ghcr.io/pranludi/catalog-service
+  newTag: 29474afe36df6281351c1edb08bdadf520010895
 
 replicas:
-  - count: 2
-    name: catalog-service
+- count: 2
+  name: catalog-service
